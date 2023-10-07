@@ -29,13 +29,45 @@
       /><br /><br />
       <!-- Tambahkan elemen input untuk angka konstanta -->
       <div id="constant-input">
-        <label for="constant-value"
-          >Masukkan Nilai Konstanta (optional) :</label
+        <!-- <label for="constant-value"
+          >Masukkan Nilai Konstanta (optional | default 0) :</label
         >
         <input
           type="number"
           id="constant-value"
           name="constant-value"
+        /><br /><br /> -->
+        <!-- <label for="alpha">Masukkan Nilai Alpha (optional | default 0) :</label>
+        <input type="number" id="alpha" name="alpha" required /><br /><br />
+        <label for="beta">Masukkan Nilai Beta (optional | default 0) :</label>
+        <input type="number" id="beta" name="beta" required /><br /><br /> -->
+        <label for="constant-value"
+          >Masukkan Nilai Konstanta (optional | default 0) :</label
+        >
+        <input
+          type="text"
+          id="constant-value"
+          name="constant-value"
+          pattern="[0-9]+(\.[0-9]+)?"
+          title="Masukkan angka atau angka bulat"
+          required
+        /><br /><br />
+        <label for="alpha">Masukkan Nilai Alpha (optional | default 0) :</label>
+        <input
+          type="text"
+          id="alpha"
+          name="alpha"
+          pattern="[0-9]+(\.[0-9]+)?"
+          title="Masukkan angka atau angka desimal"
+          required
+        /><br /><br />
+        <label for="beta">Masukkan Nilai Beta (optional | default 0) :</label>
+        <input
+          type="text"
+          id="beta"
+          name="beta"
+          pattern="[0-9]+(\.[0-9]+)?"
+          title="Masukkan angka atau angka desimal"
           required
         /><br /><br />
       </div>
@@ -65,10 +97,11 @@
       <button onclick="performOperation('multiplication')">
         Perkalian Citra
       </button>
-      <button onclick="performOperation('img-blanding')">Image Blanding</button>
+      <button onclick="performOperation('img-blending')">Image Blending</button>
     </div>
 
     <script>
+      // menampilkan gambar 1
       document
         .getElementById("file-input1")
         .addEventListener("change", function () {
@@ -88,6 +121,7 @@
           }
         });
 
+      // menampilkan gambar 2
       document
         .getElementById("file-input2")
         .addEventListener("change", function () {
