@@ -1,0 +1,26 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasil Gambar</title>
+    <style>
+      img {
+        width: 30%;
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gambar yang Diunggah</h1>
+    <img src="{{ img_url1 }}" alt="Gambar 1" /><br /><br />
+    <img src="{{ img_url2 }}" alt="Gambar 2" /><br /><br />
+
+    <h2>Hasil {{ operation_label }} Digital</h2>
+    <img src="{{ result_img }}" alt="Hasil Operasi" /><br /><br />
+
+    <a href="/">Kembali ke Halaman Utama</a>
+  </body>
+</html>
