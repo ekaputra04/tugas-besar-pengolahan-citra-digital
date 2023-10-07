@@ -1,4 +1,4 @@
-# Tugas Besar Pengolahan Cotra Digital
+# Tugas Besar Pengolahan Citra Digital
 
 ## Image Enhancement
 
