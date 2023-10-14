@@ -1,6 +1,5 @@
 from PIL import Image
 
-# Buka dua citra yang akan diurangkan
 img1 = Image.open('1.jpg')
 img2 = Image.open('2.jpg')
 
@@ -22,16 +21,16 @@ img2 = img2.resize((lebar, tinggi))
 width, height = img1.size
 hasil_gambar = Image.new("RGB", (width, height))
 
-# Lakukan penjumlahan piksel per piksel
+# Lakukan pengurangan piksel per piksel
 for x in range(width):
     for y in range(height):
         pixel1 = img1.getpixel((x, y))
         pixel2 = img2.getpixel((x, y))
 
-        # Penjumlahan piksel
-        r = min(pixel1[0] + pixel2[0], 255)
-        g = min(pixel1[1] + pixel2[1], 255)
-        b = min(pixel1[2] + pixel2[2], 255)
+        # pengurangan piksel
+        r = min(pixel1[0] - pixel2[0], 255)
+        g = min(pixel1[1] - pixel2[1], 255)
+        b = min(pixel1[2] - pixel2[2], 255)
 
         hasil_gambar.putpixel((x, y), (r, g, b))
 
@@ -39,5 +38,5 @@ for x in range(width):
 hasil_gambar.save("hasil_pengurangan.jpg")
 print("Pengurangan dua gambar selesai.")
 
-# Tampilkan gambar hasil penjumlahan
+# Tampilkan gambar hasil pengurangan
 hasil_gambar.show()

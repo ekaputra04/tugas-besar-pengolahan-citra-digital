@@ -1,15 +1,14 @@
 import cv2
 import numpy as np
 
-# Baca dua citra yang akan diurangkan
 img1 = cv2.imread('1.jpg')
 img2 = cv2.imread('2.jpg')
 
 cv2.imshow('Gambar 1', img1)
 cv2.imshow('Gambar 2', img2)
 
+# Menyesuaikan ukuran gambar agar sama
 if img1.shape != img2.shape:
-        # Menyesuaikan ukuran gambar agar sama
         width = min(img1.shape[1], img2.shape[1])
         height = min(img1.shape[0], img2.shape[0])
         img1 = cv2.resize(img1, (width, height))

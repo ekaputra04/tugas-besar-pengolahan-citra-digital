@@ -1,6 +1,5 @@
 from PIL import Image
 
-# Buka dua citra yang akan diurangkan
 img1 = Image.open('1.jpg')
 img2 = Image.open('2.jpg')
 
