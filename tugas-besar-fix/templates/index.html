@@ -32,20 +32,15 @@
         id="file-input2"
         required
       /><br /><br />
+
       <!-- Tambahkan elemen input untuk angka konstanta -->
+
+      <br />
+      <img id="image1" src="" alt="Image 1" />
+      <img id="image2" src="" alt="Image 2" />
+      <br /><br />
+
       <div id="constant-input">
-        <!-- <label for="constant-value"
-          >Masukkan Nilai Konstanta (optional | default 0) :</label
-        >
-        <input
-          type="number"
-          id="constant-value"
-          name="constant-value"
-        /><br /><br /> -->
-        <!-- <label for="alpha">Masukkan Nilai Alpha (optional | default 0) :</label>
-        <input type="number" id="alpha" name="alpha" required /><br /><br />
-        <label for="beta">Masukkan Nilai Beta (optional | default 0) :</label>
-        <input type="number" id="beta" name="beta" required /><br /><br /> -->
         <label for="constant-value"
           >Masukkan Nilai Konstanta (optional | default 0) :</label
         >
@@ -57,6 +52,7 @@
           title="Masukkan angka atau angka bulat"
           required
         /><br /><br />
+
         <label for="alpha">Masukkan Nilai Alpha (optional | default 0) :</label>
         <input
           type="text"
@@ -66,6 +62,7 @@
           title="Masukkan angka atau angka desimal"
           required
         /><br /><br />
+
         <label for="beta">Masukkan Nilai Beta (optional | default 0) :</label>
         <input
           type="text"
@@ -76,25 +73,20 @@
           required
         /><br /><br />
       </div>
+
       <input type="submit" value="Upload Gambar" />
     </form>
 
-    <br />
-    <img id="image1" src="" alt="Image 1" />
-    <img id="image2" src="" alt="Image 2" />
-    <br />
-
     <div id="image-processing-options" style="display: none">
       <h2>Pilihan Pengolahan Citra</h2>
-
       <button onclick="performOperation('addition')">
         Penjumlahan 2 Citra
       </button>
-      <button onclick="performOperation('addition-constanta')">
-        Penjumlahan Citra dengan Konstanta
-      </button>
       <button onclick="performOperation('subtraction')">
         Pengurangan 2 Citra
+      </button>
+      <button onclick="performOperation('addition-constanta')">
+        Penjumlahan Citra dengan Konstanta
       </button>
       <button onclick="performOperation('subtraction-constanta')">
         Pengurangan Citra dengan Konstanta
@@ -161,9 +153,11 @@
         ) {
           // Menampilkan elemen input untuk konstanta
           document.getElementById("constant-input").style.display = "block";
+          // form.submit();
         } else {
           // Sembunyikan elemen input untuk konstanta jika operasi lain dipilih
           document.getElementById("constant-input").style.display = "none";
+          // form.submit();
         }
         form.submit();
       }
@@ -179,5 +173,34 @@
             "block";
         });
     </script>
+
+    <!-- <div class="addition-btn">
+      <button onclick="performOperation('addition')">
+        Penjumlahan 2 Citra
+      </button>
+    </div>
+    <div class="subtraction-btn">
+      <button onclick="performOperation('subtraction')">
+        Pengurangan 2 Citra
+      </button>
+    </div>
+    <div class="addition-constant-btn">
+      <button onclick="performOperation('addition-constant')">
+        Penjumlahan Citra dengan Konstanta
+      </button>
+    </div>
+    <div class="subtraction-constant-btn">
+      <button onclick="performOperation('subtraction-constant')">
+        Pengurangan Citra dengan Konstanta
+      </button>
+    </div>
+    <div class="multiplication-btn">
+      <button onclick="performOperation('multiplication')">
+        Perkalian Citra
+      </button>
+    </div>
+    <div class="img-blending-btn">
+      <button onclick="performOperation('img-blending')">Image Blending</button>
+    </div> -->
   </body>
 </html>
