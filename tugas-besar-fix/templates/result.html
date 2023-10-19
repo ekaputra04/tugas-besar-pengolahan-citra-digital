@@ -6,16 +6,131 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hasil Gambar</title>
-    <link rel="stylesheet" href="static/css/result.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        /* border: 1px solid black; */
+      }
+      body {
+        background-image: url(https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+      }
+      .header {
+        text-align: center;
+        margin-top: 10px;
+      }
+      h1,
+      h2 {
+        padding: 5px 10px;
+      }
+      .logo-ti img {
+        position: absolute;
+        height: 55px;
+        left: 350px;
+        top: 20px;
+      }
+      .logo-unud img {
+        position: absolute;
+        height: 70px;
+        right: 350px;
+        top: 15px;
+      }
+      .img-caption {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .center {
+        text-align: center;
+        font-size: 1em;
+      }
+      .text-kiri {
+        width: 35%;
+      }
+      .text-kanan {
+        width: 65%;
+      }
+      .img-tampil {
+        display: flex;
+        width: 100%;
+        height: 430px;
+      }
+      .img-awal,
+      .img-hasil {
+        text-align: center;
+      }
+      .img-awal img {
+        width: 300px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      .img-hasil img {
+        width: 600px;
+        height: 400px;
+        border: 1px solid black;
+      }
+      .back-button {
+        display: flex;
+        justify-content: center;
+      }
+      .back-button a {
+        width: 300px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        padding: 5px 10px;
+        background-color: aliceblue;
+        color: black;
+        border: 1px solid black;
+      }
+      .back-button a:hover {
+        background-color: antiquewhite;
+      }
+    </style>
   </head>
   <body>
-    <h1>Gambar yang Diunggah</h1>
-    <img src="{{ img_url1 }}" alt="Gambar 1" /><br /><br />
-    <img src="{{ img_url2 }}" alt="Gambar 2" /><br /><br />
+    <div class="logo-ti">
+      <img
+        src="https://ng.hmtiudayana.id/public/img/logos/hmti-colored.png"
+        alt=""
+      />
+    </div>
+    <div class="logo-unud">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/7/72/Udayana_University_Logo.png"
+        alt=""
+      />
+    </div>
 
-    <h2>Hasil {{ operation_label }} Digital</h2>
-    <img src="{{ result_img }}" alt="Hasil Operasi" /><br /><br />
+    <div class="header">
+      <h1>Pengolahan Citra Digital</h1>
+      <h2>{{ operation_label }}</h2>
+    </div>
 
-    <a href="/">Kembali ke Halaman Utama</a>
+    <div class="img-caption">
+      <h2 class="center text-kiri">Gambar Awal</h2>
+      <h2 class="center text-kanan">Hasil Operasi {{ operation_label }}</h2>
+    </div>
+
+    <div class="img-tampil">
+      <div class="img-awal text-kiri">
+        <img src="{{ img_url1 }}" alt="." /><br /><br />
+        <img src="{{ img_url2 }}" alt="." /><br /><br />
+      </div>
+      <div class="img-hasil text-kanan">
+        <img src="{{ result_img }}" alt="Hasil Operasi" /><br /><br />
+      </div>
+    </div>
+
+    <div class="back-button">
+      <a href="/">Kembali ke Halaman Utama</a>
+    </div>
   </body>
 </html>

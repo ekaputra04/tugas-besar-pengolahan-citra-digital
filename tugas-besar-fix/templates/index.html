@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pengolahan Citra Digital</title>
-    <!-- <link
-      rel="stylesheet"
-      href="http://127.0.0.1:5500/tugas-besar-fix/public/index.css"
-    /> -->
     <style>
       * {
         margin: 0;
@@ -42,6 +38,7 @@
         background-color: aliceblue;
         color: black;
         border-radius: 10px;
+        cursor: pointer;
       }
       #image-processing-options button:hover,
       .submit-bottom button:hover {
@@ -49,15 +46,15 @@
       }
       .logo-ti img {
         position: absolute;
-        width: 75px;
-        left: 20px;
+        height: 55px;
+        left: 350px;
         top: 20px;
       }
       .logo-unud img {
         position: absolute;
-        width: 75px;
-        right: 20px;
-        top: 20px;
+        height: 70px;
+        right: 350px;
+        top: 15px;
       }
       form {
         display: flex;
@@ -88,6 +85,9 @@
         justify-content: center;
         margin: 20px auto;
       }
+      .submit-bottom div button {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -99,7 +99,7 @@
     </div>
     <div class="logo-unud">
       <img
-        src="https://upload.wikimedia.org/wikipedia/id/2/2d/Logo-unud-baru.png"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/72/Udayana_University_Logo.png"
         alt=""
       />
     </div>
@@ -259,6 +259,7 @@
           selectedOperation === "subtraction" ||
           selectedOperation === "multiplication"
         ) {
+          document.getElementById("image2").style.display = "block";
           document.getElementById("image2-upload").style.display = "block";
           document.getElementById("constant-input").style.display = "none";
           document.getElementById("alpha-input").style.display = "none";
@@ -270,6 +271,7 @@
           selectedOperation === "addition-constant" ||
           selectedOperation === "subtraction-constant"
         ) {
+          document.getElementById("image2").style.display = "none";
           document.getElementById("image2-upload").style.display = "none";
           document.getElementById("constant-input").style.display = "block";
           document.getElementById("alpha-input").style.display = "none";
