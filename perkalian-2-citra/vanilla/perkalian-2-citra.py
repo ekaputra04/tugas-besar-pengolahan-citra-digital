@@ -29,9 +29,9 @@ for x in range(width):
         pixel2 = img2.getpixel((x, y))
 
         # perkalian piksel
-        r = min(pixel1[0] + pixel2[0], 255)
-        g = min(pixel1[1] + pixel2[1], 255)
-        b = min(pixel1[2] + pixel2[2], 255)
+        r = min(pixel1[0] * pixel2[0], 255)
+        g = min(pixel1[1] * pixel2[1], 255)
+        b = min(pixel1[2] * pixel2[2], 255)
 
         hasil_gambar.putpixel((x, y), (r, g, b))
 

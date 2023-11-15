@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 # Baca dua citra yang akan diurangkan
 img1 = cv2.imread('1.jpg')
@@ -16,8 +15,8 @@ if img1.shape != img2.shape:
         img2 = cv2.resize(img2, (width, height))
 
 # Berikan bobot (weight) untuk kedua citra
-alpha = 0.5  # Bobot untuk citra pertama (0-1)
-beta = 0.5   # Bobot untuk citra kedua (0-1)
+alpha = 0.3  # Bobot untuk citra pertama (0-1)
+beta = 0.7   # Bobot untuk citra kedua (0-1)
 
 # Gabungkan kedua citra menggunakan formula blending
 result = cv2.addWeighted(img1, alpha, img2, beta, 0)

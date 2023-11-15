@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 # Baca gambar
 image = cv2.imread('1.jpg')
@@ -8,10 +7,10 @@ image = cv2.imread('1.jpg')
 cv2.imshow('Gambar Asli', image)
 
 # Konstanta untuk pengurangan
-constant_value = 50
+constant_value = 150
 
 # Tambahkan konstanta ke semua piksel dalam gambar
-result = cv2.add(image, (constant_value, constant_value, constant_value, 0))
+result = cv2.subtract(image, (constant_value, constant_value, constant_value, 0))
 
 cv2.imwrite('hasil_pengurangan_konstanta.jpg', result)
 print("Pengurangan gambar dengan konstanta selesai.")

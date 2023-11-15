@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 # Baca gambar
 image = cv2.imread('1.jpg')
@@ -8,7 +7,7 @@ image = cv2.imread('1.jpg')
 cv2.imshow('Gambar Asli', image)
 
 # Konstanta untuk penjumlahan
-constant_value = 50
+constant_value = 200
 
 # Tambahkan konstanta ke semua piksel dalam gambar
 result = cv2.add(image, (constant_value, constant_value, constant_value, 0))

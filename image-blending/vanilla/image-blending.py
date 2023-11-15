@@ -23,8 +23,8 @@ width, height = img1.size
 hasil_gambar = Image.new("RGB", (width, height))
 
 # Tentukan bobot (alpha) untuk citra pertama dan citra kedua
-alpha = 0.7  # Bobot untuk citra pertama (0-1)
-beta = 0.3   # Bobot untuk citra kedua (0-1)
+alpha = 0.3  # Bobot untuk citra pertama (0-1)
+beta = 0.7   # Bobot untuk citra kedua (0-1)
 
 # Lakukan blending piksel per piksel
 blended_image = Image.new("RGB", img1.size)
