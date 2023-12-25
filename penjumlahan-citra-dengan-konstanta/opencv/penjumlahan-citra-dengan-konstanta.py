@@ -1,7 +1,7 @@
 import cv2
 
 # Baca gambar
-image = cv2.imread('1.jpg')
+image = cv2.imread('gray_1.jpg')
 
 # Tampilkan gambar asli
 cv2.imshow('Gambar Asli', image)

@@ -5,7 +5,7 @@ gambar = Image.open('1.jpg')
 gambar.show()
 
 # Konstanta untuk penjumlahan
-constant_value = 50
+constant_value = 100
 
 # Mendapatkan ukuran gambar
 lebar, tinggi = gambar.size

@@ -1,38 +1,42 @@
 from PIL import Image
 
-# Buka dua citra yang akan diurangkan
-img1 = Image.open('1.jpg')
-img2 = Image.open('2.jpg')
+# Isi nama citra yang akan diproses
+namaImage1 = '1.jpg'
+namaImage2 = '2.jpg'
+
+# Berikan bobot (weight) untuk kedua citra
+alpha = 0.5  # Bobot untuk citra pertama (0-1)
+beta = 0.5   # Bobot untuk citra kedua (0-1)
+
+# Buka dua citra yang akan diproses
+image1 = Image.open(namaImage1)
+image2 = Image.open(namaImage2)
 
 # Tampilkan gambar awal
-img1.show()
-img2.show()
+image1.show()
+image2.show()
 
 # Mendapatkan ukuran gambar
-lebar1, tinggi1 = img1.size
-lebar2, tinggi2 = img2.size
+lebar1, tinggi1 = image1.size
+lebar2, tinggi2 = image2.size
 
 # Menyesuaikan ukuran gambar agar sama
 lebar = min(lebar1, lebar2)
 tinggi = min(tinggi1, tinggi2)
 
-img1 = img1.resize((lebar, tinggi))
-img2 = img2.resize((lebar, tinggi))
+image1 = image1.resize((lebar, tinggi))
+image2 = image2.resize((lebar, tinggi))
 
-width, height = img1.size
+width, height = image1.size
 hasil_gambar = Image.new("RGB", (width, height))
 
-# Tentukan bobot (alpha) untuk citra pertama dan citra kedua
-alpha = 0.3  # Bobot untuk citra pertama (0-1)
-beta = 0.7   # Bobot untuk citra kedua (0-1)
-
 # Lakukan blending piksel per piksel
-blended_image = Image.new("RGB", img1.size)
+blended_image = Image.new("RGB", image1.size)
     
-for x in range(img1.width):
-    for y in range(img1.height):
-        pixel1 = img1.getpixel((x, y))
-        pixel2 = img2.getpixel((x, y))
+for x in range(image1.width):
+    for y in range(image1.height):
+        pixel1 = image1.getpixel((x, y))
+        pixel2 = image2.getpixel((x, y))
 
         # Perhitungan blending
         r = int(alpha * pixel1[0] + beta * pixel2[0])
@@ -42,8 +46,7 @@ for x in range(img1.width):
         blended_image.putpixel((x, y), (r, g, b))
 
 # Simpan hasil gambar
-blended_image.save("hasil_blending.jpg")
-print("Image blending selesai.")
+blended_image.save('blending_' + namaImage1 + '_' + namaImage2)
 
 # Tampilkan gambar hasil blending
 blended_image.show()

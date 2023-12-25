@@ -1,7 +1,7 @@
 import cv2
 
-img1 = cv2.imread('gray_1.jpg')
-img2 = cv2.imread('gray_2.jpg')
+img1 = cv2.imread('gray_2.jpg')
+img2 = cv2.imread('gray_1.jpg')
 
 cv2.imshow('Gambar 1', img1)
 cv2.imshow('Gambar 2', img2)

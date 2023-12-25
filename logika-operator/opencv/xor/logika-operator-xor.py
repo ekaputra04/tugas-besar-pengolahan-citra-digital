@@ -1,27 +1,31 @@
 import cv2
 import numpy as np
 
-# Baca dua citra yang akan diurangkan
-img1 = cv2.imread('1.jpg')
-img2 = cv2.imread('2.jpg')
+# Isi nama citra yang akan diproses
+namaImage1 = 'binary_1.jpg'
+namaImage2 = 'binary_2.jpg'
 
-cv2.imshow('Gambar 1', img1)
-cv2.imshow('Gambar 2', img2)
+# Baca dua citra yang akan diproses
+image1 = cv2.imread(namaImage1)
+image2 = cv2.imread(namaImage2)
 
-if img1.shape != img2.shape:
-        # Menyesuaikan ukuran gambar agar sama
-        width = min(img1.shape[1], img2.shape[1])
-        height = min(img1.shape[0], img2.shape[0])
-        img1 = cv2.resize(img1, (width, height))
-        img2 = cv2.resize(img2, (width, height))
+cv2.imshow('Gambar 1', image1)
+cv2.imshow('Gambar 2', image2)
 
-# Lakukan perkalian citra
-result = cv2.bitwise_xor(img1, img2)
+# Menyesuaikan ukuran gambar agar sama
+if image1.shape != image2.shape:
+        width = min(image1.shape[1], image2.shape[1])
+        height = min(image1.shape[0], image2.shape[0])
+        image1 = cv2.resize(image1, (width, height))
+        image2 = cv2.resize(image2, (width, height))
 
-# Simpan hasil operasi perkalian ke dalam sebuah file
-cv2.imwrite('hasil_operator_xor.jpg', result)
+# Lakukan operasi xor
+result = cv2.bitwise_xor(image1, image2)
 
-# Tampilkan citra hasil perkalian
+# Simpan hasil operasi xor ke dalam sebuah file
+cv2.imwrite('operator_xor_' + namaImage1 + '_' + namaImage2, result)
+
+# Tampilkan citra hasil xor
 cv2.imshow('Hasil Logika Xor', result)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

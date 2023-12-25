@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 # Baca dua citra yang akan diurangkan
-img1 = cv2.imread('1.jpg')
-img2 = cv2.imread('2.jpg')
+img1 = cv2.imread('gray_1.jpg')
+img2 = cv2.imread('gray_2.jpg')
 
 cv2.imshow('Gambar 1', img1)
 cv2.imshow('Gambar 2', img2)

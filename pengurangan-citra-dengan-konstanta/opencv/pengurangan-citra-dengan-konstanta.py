@@ -7,7 +7,7 @@ image = cv2.imread('1.jpg')
 cv2.imshow('Gambar Asli', image)
 
 # Konstanta untuk pengurangan
-constant_value = 150
+constant_value = 100
 
 # Tambahkan konstanta ke semua piksel dalam gambar
 result = cv2.subtract(image, (constant_value, constant_value, constant_value, 0))

@@ -2,6 +2,28 @@
 
 ## Image Enhancement
 
+### Instalasi
+
+Library yang digunakan yaitu Pillow, OpenCV, dan Flask
+
+Instalasi Pillow
+
+```shell
+pip install Pillow
+```
+
+Instalasi OpenCV
+
+```shell
+pip install opencv-python
+```
+
+Instalasi Flask
+
+```shell
+pip install Flask
+```
+
 ### Penjumlahan 2 Citra
 
 Operasi penjumlahan dua citra adalah salah satu teknik dasar dalam pengolahan citra digital. Pada operasi ini, dua citra dengan ukuran yang sama akan dijumlahkan piksel per pikselnya. Hasilnya adalah citra baru yang merupakan hasil dari penjumlahan intensitas piksel-piksel kedua citra.
