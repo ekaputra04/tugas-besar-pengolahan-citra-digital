@@ -1,27 +1,29 @@
 import cv2
-import numpy as np
 
-# Baca dua citra yang akan diurangkan
-img1 = cv2.imread('gray_1.jpg')
-img2 = cv2.imread('gray_2.jpg')
+# Isi nama citra yang akan diproses
+namaImage1 = '1.jpg'
+namaImage2 = '2.jpg'
 
-cv2.imshow('Gambar 1', img1)
-cv2.imshow('Gambar 2', img2)
+image1 = cv2.imread(namaImage1)
+image2 = cv2.imread(namaImage2)
 
-if img1.shape != img2.shape:
-        # Menyesuaikan ukuran gambar agar sama
-        width = min(img1.shape[1], img2.shape[1])
-        height = min(img1.shape[0], img2.shape[0])
-        img1 = cv2.resize(img1, (width, height))
-        img2 = cv2.resize(img2, (width, height))
+cv2.imshow('Gambar 1', image1)
+cv2.imshow('Gambar 2', image2)
+
+# Menyesuaikan ukuran gambar agar sama
+if image1.shape != image2.shape:
+        width = min(image1.shape[1], image2.shape[1])
+        height = min(image1.shape[0], image2.shape[0])
+        image1 = cv2.resize(image1, (width, height))
+        image2 = cv2.resize(image2, (width, height))
 
 # Lakukan perkalian citra
-result = cv2.multiply(img1, img2)
+result = cv2.multiply(image1, image2)
 
 # Simpan hasil operasi perkalian ke dalam sebuah file
-cv2.imwrite('hasil_perkalian.jpg', result)
+cv2.imwrite('hasil_perkalian_' + namaImage1 + '_' + namaImage2, result)
 
 # Tampilkan citra hasil perkalian
-cv2.imshow('Perkalian 2 Citra', result)
+cv2.imshow('perkalian 2 Citra', result)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

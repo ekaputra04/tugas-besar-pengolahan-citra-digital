@@ -1,11 +1,14 @@
 from PIL import Image
 
-# Buka gambar
-gambar = Image.open('1.jpg')
-gambar.show()
+# Isi nama citra yang akan diproses
+namaImage = '1.jpg'
 
 # Konstanta untuk pengurangan
-constant_value = 100
+constant_value = 200
+
+# Buka gambar
+gambar = Image.open(namaImage)
+gambar.show()
 
 # Mendapatkan ukuran gambar
 lebar, tinggi = gambar.size
@@ -26,8 +29,7 @@ for x in range(lebar):
         hasil_gambar.putpixel((x, y), (r, g, b))
 
 # Simpan hasil gambar
-hasil_gambar.save("hasil_pengurangan_konstanta.jpg")
-print("Pengurangan gambar dengan konstanta selesai.")
+hasil_gambar.save('hasil_pengurangan_' + namaImage)
 
 # Tampilkan gambar hasil pengurangan
 hasil_gambar.show()

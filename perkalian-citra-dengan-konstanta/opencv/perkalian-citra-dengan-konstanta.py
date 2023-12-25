@@ -1,19 +1,19 @@
 import cv2
-import numpy as np
 
-# Baca citra awal
-img1 = cv2.imread('1.jpg')
+# Isi nama citra yang akan diproses
+namaImage = '1.jpg'
 
-cv2.imshow('Gambar 1', img1)
-
-# Konstanta untuk perkalian
 constant_value = 1.8
 
-# Tambahkan konstanta ke semua piksel dalam gambar
-result = cv2.multiply(img1, (constant_value, constant_value, constant_value, 0))
+image = cv2.imread(namaImage)
+
+cv2.imshow('Gambar 1', image)
+
+# Lakukan perkalian citra
+result = cv2.multiply(image, (constant_value, constant_value, constant_value, 0))
 
 # Simpan hasil operasi perkalian ke dalam sebuah file
-cv2.imwrite('hasil_perkalian.jpg', result)
+cv2.imwrite('hasil_perkalian_' + namaImage, result)
 
 # Tampilkan citra hasil perkalian
 cv2.imshow('Perkalian 2 Citra', result)

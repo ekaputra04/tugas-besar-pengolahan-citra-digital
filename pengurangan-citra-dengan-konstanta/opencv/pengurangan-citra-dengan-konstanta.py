@@ -1,25 +1,21 @@
 import cv2
 
-# Baca gambar
-image = cv2.imread('1.jpg')
+# Isi nama citra yang akan diproses
+namaImage = '1.jpg'
 
-# Tampilkan gambar asli
-cv2.imshow('Gambar Asli', image)
+constant_value = 200
 
-# Konstanta untuk pengurangan
-constant_value = 100
+image = cv2.imread(namaImage)
 
-# Tambahkan konstanta ke semua piksel dalam gambar
+cv2.imshow('Gambar 1', image)
+
+# Lakukan pengurangan citra
 result = cv2.subtract(image, (constant_value, constant_value, constant_value, 0))
 
-cv2.imwrite('hasil_pengurangan_konstanta.jpg', result)
-print("Pengurangan gambar dengan konstanta selesai.")
+# Simpan hasil operasi pengurangan ke dalam sebuah file
+cv2.imwrite('hasil_pengurangan_' + namaImage, result)
 
-# Tampilkan gambar hasil pengurangan dengan konstanta
-cv2.imshow('Hasil pengurangan dengan Konstanta', result)
-
-# Tunggu sampai pengguna menekan tombol apapun
+# Tampilkan citra hasil pengurangan
+cv2.imshow('Pengurangan 2 Citra', result)
 cv2.waitKey(0)
-
-# Tutup semua jendela gambar
 cv2.destroyAllWindows()
